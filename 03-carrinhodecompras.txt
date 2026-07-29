@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+    // Vamos simular um carrinho de compras simples via terminal.
+    // Dica: Você pode usar a classe Scanner para receber o que o usuário digita.
+
+    // Crie uma ArrayList do tipo String chamada carrinho.
+    // Use um laço while que roda continuamente até que o usuário decida parar.
+    // Dentro do laço, peça para o usuário digitar o nome de um produto para adicionar ao carrinho ou digitar "sair" para encerrar.
+    // Se ele digitar "sair", o programa encerra o laço e exibe a lista completa de produtos que foram adicionados. Se digitar qualquer outra coisa, o produto é adicionado à lista e o laço continua.
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> carrinho = new ArrayList<>();
+
+        System.out.print("adicione ao carrinho:");
+        String comando = scanner.nextLine();
+        carrinho.add(comando);
+        System.out.println("\"" + comando + "\" foi adicionado ao carrinho!\n");
+        while (true) { 
+            System.out.print("adicione ao carrinho ou digite 'sair' para fechar:");
+            comando = scanner.nextLine();
+            if(comando.equalsIgnoreCase("sair")){
+                scanner.close();
+                break;
+            }
+            carrinho.add(comando);
+            System.out.println("\"" + comando + "\" foi adicionado ao carrinho!\n");
+        }
+        System.out.print("carrinho fechado!\nSeus itens:");
+        for (int i=0; i<carrinho.size(); i++){
+            System.out.print(carrinho.get(i)+", ");
+        }
+    }
+}
