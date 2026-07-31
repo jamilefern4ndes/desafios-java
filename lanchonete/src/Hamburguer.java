@@ -11,6 +11,7 @@ public class Hamburguer extends Lanche {
 
     @Override
     public void exibirDetalhes(){
-        System.out.println("lanche: " + this.nome + " Preço: R$" +this.preco + " Artesanal? " + this.artesanal);
+        super.exibirDetalhes();
+        System.out.println("Artesanal? " + this.artesanal);
     }
 }
